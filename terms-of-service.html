@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Terms of Service – Solitaire Classic Zen Master</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Exo+2:wght@300;400;600;700&display=swap');
+
+        :root {
+            --bg: #050d0a;
+            --surface: #0a1a12;
+            --border: rgba(0, 210, 255, 0.15);
+            --accent: #00d2ff;
+            --accent2: #4dff9e;
+            --text: #c8ddd5;
+            --text-muted: #6a8a7a;
+            --heading: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Exo 2', sans-serif;
+            font-weight: 300;
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(0, 210, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 210, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .lang-bar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(5, 13, 10, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 24px;
+        }
+
+        .lang-bar .brand {
+            font-family: 'Orbitron', monospace;
+            font-size: 13px;
+            color: var(--accent);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .lang-toggle {
+            display: flex;
+            gap: 6px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            padding: 5px 14px;
+            border-radius: 4px;
+            font-family: 'Exo 2', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            letter-spacing: 1px;
+            transition: all 0.2s;
+        }
+
+        .lang-btn.active,
+        .lang-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: rgba(0, 210, 255, 0.08);
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 48px 24px 80px;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 56px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .page-header .doc-type {
+            font-family: 'Orbitron', monospace;
+            font-size: 11px;
+            letter-spacing: 4px;
+            color: var(--accent2);
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .page-header h1 {
+            font-family: 'Orbitron', monospace;
+            font-size: clamp(22px, 5vw, 36px);
+            font-weight: 900;
+            color: var(--heading);
+            text-shadow: 0 0 30px rgba(0, 210, 255, 0.4);
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .page-header .meta {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .page-header .meta span {
+            color: var(--accent);
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-family: 'Orbitron', monospace;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        p {
+            margin-bottom: 14px;
+            font-size: 15px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 14px;
+        }
+
+        ul li {
+            font-size: 15px;
+            padding: 6px 0 6px 20px;
+            position: relative;
+            color: var(--text);
+        }
+
+        ul li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent2);
+            font-size: 12px;
+            top: 8px;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(0, 210, 255, 0.3);
+        }
+
+        a:hover {
+            border-bottom-color: var(--accent);
+        }
+
+        .highlight-box {
+            background: rgba(0, 210, 255, 0.05);
+            border: 1px solid rgba(0, 210, 255, 0.2);
+            border-left: 3px solid var(--accent);
+            border-radius: 6px;
+            padding: 16px 20px;
+            margin-bottom: 20px;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+            font-size: 14px;
+            color: rgba(200, 221, 213, 0.85);
+        }
+
+        .warning-box {
+            background: rgba(255, 180, 0, 0.05);
+            border: 1px solid rgba(255, 180, 0, 0.2);
+            border-left: 3px solid #ffb400;
+            border-radius: 6px;
+            padding: 16px 20px;
+            margin-bottom: 20px;
+        }
+
+        .warning-box p {
+            margin-bottom: 0;
+            font-size: 14px;
+            color: rgba(255, 220, 120, 0.9);
+        }
+
+        .contact-card {
+            background: rgba(77, 255, 158, 0.04);
+            border: 1px solid rgba(77, 255, 158, 0.2);
+            border-radius: 8px;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .contact-card .label {
+            font-family: 'Orbitron', monospace;
+            font-size: 11px;
+            letter-spacing: 3px;
+            color: var(--accent2);
+            margin-bottom: 8px;
+        }
+
+        .contact-card a {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--accent2);
+            border-bottom-color: rgba(77, 255, 158, 0.3);
+        }
+
+        .footer {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid var(--border);
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .footer strong {
+            color: var(--accent);
+        }
+
+        .lang-section {
+            display: none;
+        }
+
+        .lang-section.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="lang-bar">
+        <div class="brand">Hexlume Games</div>
+        <div class="lang-toggle">
+            <button class="lang-btn active" onclick="setLang('en')">EN</button>
+            <button class="lang-btn" onclick="setLang('tr')">TR</button>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- ===== ENGLISH ===== -->
+        <div class="lang-section active" id="lang-en">
+            <div class="page-header">
+                <div class="doc-type">Legal Document</div>
+                <h1>Terms of Service</h1>
+                <div class="meta">
+                    Solitaire Classic – Zen Master &nbsp;|&nbsp;
+                    Developed by <span>Hexlume Games</span><br>
+                    Package: <span>com.hexlumegames.solitaire</span><br>
+                    Last Updated: <span id="date-en"></span>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <p>Please read these Terms of Service carefully before using <strong>Solitaire Classic – Zen
+                        Master</strong>. By downloading, installing, or using the application, you agree to be bound by
+                    these Terms. If you do not agree, do not use the app.</p>
+            </div>
+
+            <section>
+                <h2>1. Acceptance of Terms</h2>
+                <p>These Terms of Service ("Terms") constitute a legally binding agreement between you ("User") and
+                    Hexlume Games ("Developer", "we", "us"). These Terms govern your use of the mobile application
+                    <strong>Solitaire Classic – Zen Master</strong> (the "App"), available on the Google Play Store.
+                </p>
+            </section>
+
+            <section>
+                <h2>2. License Grant</h2>
+                <p>Subject to your compliance with these Terms, we grant you a limited, non-exclusive, non-transferable,
+                    revocable license to download and use the App on a compatible Android device that you own or
+                    control, solely for your personal, non-commercial entertainment.</p>
+                <p>You may not:</p>
+                <ul>
+                    <li>Copy, modify, distribute, sell, or sublicense any part of the App</li>
+                    <li>Reverse engineer, decompile, or disassemble the App</li>
+                    <li>Remove or alter any proprietary notices or branding</li>
+                    <li>Use the App for any commercial purpose without our prior written consent</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>3. The App and Its Features</h2>
+                <p>The App is a classic Klondike Solitaire card game with the following features:</p>
+                <ul>
+                    <li>Draw-1 and Draw-3 gameplay modes</li>
+                    <li>Auto-finish (Auto-Solve) feature accessible via rewarded advertisement</li>
+                    <li>Undo functionality</li>
+                    <li>Score and time tracking stored locally on your device</li>
+                    <li>Sound effects with mute toggle</li>
+                    <li>Offline play capability via Service Worker caching</li>
+                </ul>
+                <p>We reserve the right to update, modify, or discontinue features of the App at any time without prior
+                    notice.</p>
+            </section>
+
+            <section>
+                <h2>4. Advertisements</h2>
+                <p>The App is free to play and is supported by advertisements served through Google AdMob.
+                    Advertisements may include:</p>
+                <ul>
+                    <li><strong>Banner Ads:</strong> Displayed at the bottom of the screen during gameplay</li>
+                    <li><strong>Interstitial Ads:</strong> Full-screen ads displayed between games (approximately every
+                        3 new games)</li>
+                    <li><strong>Rewarded Video Ads:</strong> Optional ads you can choose to watch in exchange for the
+                        Auto-Finish feature</li>
+                </ul>
+                <div class="warning-box">
+                    <p>You are never required to watch a Rewarded Ad. The Auto-Finish button is clearly labeled and
+                        requires your explicit confirmation before an ad is shown.</p>
+                </div>
+                <p>We do not control the content of third-party advertisements. Ad content is determined by Google AdMob
+                    based on your device settings and preferences.</p>
+            </section>
+
+            <section>
+                <h2>5. In-App Purchases</h2>
+                <p>The current version of the App does not include in-app purchases. All gameplay features are available
+                    free of charge. Should in-app purchases be introduced in a future update, these Terms will be
+                    updated accordingly.</p>
+            </section>
+
+            <section>
+                <h2>6. Intellectual Property</h2>
+                <p>The App, including its design, graphics, game logic, sound effects, and all associated content, is
+                    owned by or licensed to Hexlume Games and is protected by applicable intellectual property laws. All
+                    rights not expressly granted in these Terms are reserved.</p>
+                <p>The "Hexlume Games" name, logo, and "Solitaire Classic – Zen Master" title are trademarks of Hexlume
+                    Games.</p>
+            </section>
+
+            <section>
+                <h2>7. User Conduct</h2>
+                <p>You agree not to use the App in any way that:</p>
+                <ul>
+                    <li>Violates any applicable laws or regulations</li>
+                    <li>Attempts to circumvent or manipulate the ad-delivery system</li>
+                    <li>Uses automated tools, bots, or scripts to interact with the App</li>
+                    <li>Interferes with or disrupts the integrity or performance of the App</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>8. Disclaimer of Warranties</h2>
+                <p>THE APP IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR
+                    IMPLIED. TO THE FULLEST EXTENT PERMITTED BY LAW, HEXLUME GAMES DISCLAIMS ALL WARRANTIES, INCLUDING
+                    BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND
+                    NON-INFRINGEMENT.</p>
+                <p>We do not warrant that the App will be uninterrupted, error-free, or free of viruses or other harmful
+                    components.</p>
+            </section>
+
+            <section>
+                <h2>9. Limitation of Liability</h2>
+                <p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, HEXLUME GAMES SHALL NOT BE LIABLE FOR ANY
+                    INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM YOUR USE OF OR
+                    INABILITY TO USE THE APP, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
+                <p>Our total liability to you for any claims arising from these Terms or the App shall not exceed the
+                    amount you paid for the App (which is zero, as the App is free).</p>
+            </section>
+
+            <section>
+                <h2>10. Children</h2>
+                <p>The App is intended for users of all ages. Users under the age of 13 should use the App only with
+                    parental consent. We comply with applicable laws regarding children's privacy, including COPPA.
+                    Please see our Privacy Policy for details.</p>
+            </section>
+
+            <section>
+                <h2>11. Google Play Store Terms</h2>
+                <p>Your use of the App is also governed by the <a href="https://play.google.com/about/play-terms/"
+                        target="_blank">Google Play Terms of Service</a>. In the event of a conflict between these Terms
+                    and the Google Play Terms of Service, the Google Play Terms of Service shall prevail to the extent
+                    of the conflict.</p>
+            </section>
+
+            <section>
+                <h2>12. Changes to Terms</h2>
+                <p>We reserve the right to modify these Terms at any time. We will notify users of material changes by
+                    updating the "Last Updated" date. Continued use of the App following any changes constitutes
+                    acceptance of the new Terms.</p>
+            </section>
+
+            <section>
+                <h2>13. Governing Law</h2>
+                <p>These Terms shall be governed by and construed in accordance with applicable laws. Any dispute
+                    arising from these Terms shall be resolved through good-faith negotiation. If unresolved, disputes
+                    shall be submitted to the competent courts of the jurisdiction in which Hexlume Games operates.</p>
+            </section>
+
+            <section>
+                <h2>14. Contact</h2>
+                <div class="contact-card">
+                    <div class="label">Developer Contact</div>
+                    <a href="mailto:hexlume.games@gmail.com">hexlume.games@gmail.com</a>
+                    <p style="margin-top:10px; font-size:13px; color: var(--text-muted);">Hexlume
+                        Games<br>com.hexlumegames.solitaire</p>
+                </div>
+            </section>
+
+            <div class="footer">
+                &copy;
+                <script>document.write(new Date().getFullYear())</script> <strong>Hexlume Games</strong> · All rights
+                reserved
+            </div>
+        </div>
+
+        <!-- ===== TURKISH ===== -->
+        <div class="lang-section" id="lang-tr">
+            <div class="page-header">
+                <div class="doc-type">Yasal Belge</div>
+                <h1>Kullanım Koşulları</h1>
+                <div class="meta">
+                    Solitaire Classic – Zen Master &nbsp;|&nbsp;
+                    Geliştirici: <span>Hexlume Games</span><br>
+                    Paket: <span>com.hexlumegames.solitaire</span><br>
+                    Son Güncelleme: <span id="date-tr"></span>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <p>Lütfen bu Kullanım Koşulları'nı <strong>Solitaire Classic – Zen Master</strong> uygulamasını
+                    kullanmadan önce dikkatlice okuyun. Uygulamayı indirerek, yükleyerek veya kullanarak bu Koşullar'a
+                    bağlı olmayı kabul etmiş olursunuz. Kabul etmiyorsanız uygulamayı kullanmayınız.</p>
+            </div>
+
+            <section>
+                <h2>1. Koşulların Kabulü</h2>
+                <p>Bu Kullanım Koşulları ("Koşullar"), siz ("Kullanıcı") ile Hexlume Games ("Geliştirici", "biz",
+                    "bizim") arasında yasal olarak bağlayıcı bir sözleşme oluşturur. Bu Koşullar, Google Play Store'da
+                    sunulan <strong>Solitaire Classic – Zen Master</strong> mobil uygulamasının ("Uygulama") kullanımını
+                    düzenler.</p>
+            </section>
+
+            <section>
+                <h2>2. Lisans Hakkı</h2>
+                <p>Bu Koşullara uymanız kaydıyla, sahibi olduğunuz veya kontrolünüzdeki uyumlu bir Android cihazda
+                    Uygulamayı yalnızca kişisel, ticari olmayan eğlence amaçlı olarak indirip kullanmanız için size
+                    sınırlı, münhasır olmayan, devredilemez ve geri alınabilir bir lisans veriyoruz.</p>
+                <p>Aşağıdakileri yapamazsınız:</p>
+                <ul>
+                    <li>Uygulamanın herhangi bir bölümünü kopyalamak, değiştirmek, dağıtmak, satmak veya alt lisans
+                        vermek</li>
+                    <li>Uygulamayı tersine mühendislik, derleyiciden ayırma veya ayrıştırma yoluyla analiz etmek</li>
+                    <li>Mülkiyet bildirimlerini veya markalamayı kaldırmak ya da değiştirmek</li>
+                    <li>Önceden yazılı onayımız olmadan Uygulamayı ticari amaçlarla kullanmak</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>3. Uygulama ve Özellikleri</h2>
+                <p>Uygulama, aşağıdaki özelliklere sahip klasik bir Klondike Solitaire kart oyunudur:</p>
+                <ul>
+                    <li>1'li Çekme ve 3'lü Çekme oyun modları</li>
+                    <li>Ödüllü reklam aracılığıyla erişilebilen Otomatik Tamamlama özelliği</li>
+                    <li>Geri Al (Undo) işlevi</li>
+                    <li>Cihazınızda yerel olarak saklanan skor ve süre takibi</li>
+                    <li>Sessize alma/açma seçeneğiyle ses efektleri</li>
+                    <li>Servis Çalışanı önbelleği aracılığıyla çevrimdışı oyun özelliği</li>
+                </ul>
+                <p>Önceden haber vermeksizin Uygulamanın özelliklerini güncelleme, değiştirme veya sonlandırma hakkını
+                    saklı tutarız.</p>
+            </section>
+
+            <section>
+                <h2>4. Reklamlar</h2>
+                <p>Uygulama ücretsizdir ve Google AdMob aracılığıyla sunulan reklamlarla desteklenmektedir. Reklamlar
+                    şunları içerebilir:</p>
+                <ul>
+                    <li><strong>Banner Reklamlar:</strong> Oyun sırasında ekranın alt kısmında görüntülenir</li>
+                    <li><strong>Geçiş Reklamları (Interstitial):</strong> Oyunlar arasında görüntülenen tam ekran
+                        reklamlar (yaklaşık her 3 yeni oyunda bir)</li>
+                    <li><strong>Ödüllü Video Reklamları:</strong> Otomatik Tamamlama özelliği karşılığında izlemeyi
+                        seçebileceğiniz isteğe bağlı reklamlar</li>
+                </ul>
+                <div class="warning-box">
+                    <p>Ödüllü Reklam izlemeniz asla zorunlu değildir. Otomatik Tamamlama düğmesi açıkça etiketlenmiş
+                        olup reklam gösterilmeden önce açık onayınızı gerektirir.</p>
+                </div>
+                <p>Üçüncü taraf reklam içeriğini kontrol etmiyoruz. Reklam içeriği, cihaz ayarlarınıza ve tercihlerinize
+                    göre Google AdMob tarafından belirlenir.</p>
+            </section>
+
+            <section>
+                <h2>5. Uygulama İçi Satın Alma</h2>
+                <p>Uygulamanın mevcut sürümü uygulama içi satın alma içermemektedir. Tüm oyun özellikleri ücretsiz
+                    olarak sunulmaktadır. Gelecekte uygulama içi satın alma sunulması durumunda bu Koşullar buna göre
+                    güncellenecektir.</p>
+            </section>
+
+            <section>
+                <h2>6. Fikri Mülkiyet</h2>
+                <p>Uygulama; tasarımı, grafikleri, oyun mantığı, ses efektleri ve ilgili tüm içeriğiyle Hexlume Games'e
+                    ait olup uygulanabilir fikri mülkiyet yasalarıyla korunmaktadır. Bu Koşullarda açıkça belirtilmeyen
+                    tüm haklar saklıdır.</p>
+                <p>"Hexlume Games" adı, logosu ve "Solitaire Classic – Zen Master" başlığı, Hexlume Games'in ticari
+                    markalarıdır.</p>
+            </section>
+
+            <section>
+                <h2>7. Kullanıcı Davranışı</h2>
+                <p>Uygulamayı aşağıdaki şekillerde kullanmamayı kabul edersiniz:</p>
+                <ul>
+                    <li>Yürürlükteki yasa veya düzenlemeleri ihlal etmek</li>
+                    <li>Reklam dağıtım sistemini devre dışı bırakmaya veya manipüle etmeye çalışmak</li>
+                    <li>Uygulamayla etkileşim kurmak için otomatik araçlar, botlar veya betikler kullanmak</li>
+                    <li>Uygulamanın bütünlüğünü veya performansını bozmak</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>8. Garanti Reddi</h2>
+                <p>UYGULAMA, AÇIK VEYA ZIMNİ HERHANGİ BİR GARANTİ OLMAKSIZIN "OLDUĞU GİBİ" VE "MEVCUT OLDUĞU ŞEKİLDE"
+                    SUNULMAKTADIR. YASANIN İZİN VERDİĞİ EN GENİŞ ÖLÇÜDE HEXLUME GAMES, TİCARİ ELVERİŞLİLİK, BELİRLİ BİR
+                    AMACA UYGUNLUK VE İHLAL ETMEME DAHİL ANCAK BUNLARLA SINIRLI OLMAYAN TÜM ZIMNİ GARANTİLERİ REDDEDER.
+                </p>
+            </section>
+
+            <section>
+                <h2>9. Sorumluluk Sınırlaması</h2>
+                <p>UYGULANABILIR YASANIN İZİN VERDİĞİ AZAMI ÖLÇÜDE HEXLUME GAMES, UYGULAMAYI KULLANMANIZdan VEYA
+                    KULLANAMAMANIZDAN KAYNAKLANAN DOLAYLI, ARIZI, ÖZEL, SONUÇSAL VEYA CEZAİ ZARARLARDAN SORUMLU
+                    OLMAYACAKTIR.</p>
+                <p>Bu Koşullardan veya Uygulamadan doğan talepler için size karşı toplam sorumluluğumuz, Uygulama için
+                    ödediğiniz tutarı (Uygulama ücretsiz olduğundan bu tutar sıfırdır) aşmayacaktır.</p>
+            </section>
+
+            <section>
+                <h2>10. Çocuklar</h2>
+                <p>Uygulama her yaştan kullanıcıya yöneliktir. 13 yaşın altındaki kullanıcılar Uygulamayı yalnızca
+                    ebeveyn onayıyla kullanmalıdır. Çocukların gizliliğine ilişkin COPPA dahil geçerli yasalara
+                    uymaktayız. Ayrıntılar için Gizlilik Politikamıza bakınız.</p>
+            </section>
+
+            <section>
+                <h2>11. Google Play Store Koşulları</h2>
+                <p>Uygulamayı kullanımınız aynı zamanda <a href="https://play.google.com/about/play-terms/"
+                        target="_blank">Google Play Hizmet Koşulları</a> tarafından da yönetilir. Bu Koşullar ile Google
+                    Play Hizmet Koşulları arasında çelişki olması halinde çelişki kapsamında Google Play Hizmet
+                    Koşulları geçerli olacaktır.</p>
+            </section>
+
+            <section>
+                <h2>12. Koşullardaki Değişiklikler</h2>
+                <p>Bu Koşulları istediğimiz zaman değiştirme hakkını saklı tutarız. Önemli değişiklikleri "Son
+                    Güncelleme" tarihini güncelleyerek kullanıcılara bildireceğiz. Değişikliklerden sonra Uygulamayı
+                    kullanmaya devam etmeniz yeni Koşulları kabul ettiğiniz anlamına gelir.</p>
+            </section>
+
+            <section>
+                <h2>13. Uygulanacak Hukuk</h2>
+                <p>Bu Koşullar, uygulanabilir yasalar çerçevesinde yorumlanır ve uygulanır. Bu Koşullardan doğan
+                    uyuşmazlıklar önce iyi niyetli müzakereyle çözülmeye çalışılır; çözüme kavuşturulamaması durumunda
+                    Hexlume Games'in faaliyet gösterdiği yargı bölgesinin yetkili mahkemelerine taşınır.</p>
+            </section>
+
+            <section>
+                <h2>14. İletişim</h2>
+                <div class="contact-card">
+                    <div class="label">Geliştirici İletişim</div>
+                    <a href="mailto:hexlume.games@gmail.com">hexlume.games@gmail.com</a>
+                    <p style="margin-top:10px; font-size:13px; color: var(--text-muted);">Hexlume
+                        Games<br>com.hexlumegames.solitaire</p>
+                </div>
+            </section>
+
+            <div class="footer">
+                &copy;
+                <script>document.write(new Date().getFullYear())</script> <strong>Hexlume Games</strong> · Tüm hakları
+                saklıdır
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function setLang(lang) {
+            document.querySelectorAll('.lang-section').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.lang-btn').forEach(el => el.classList.remove('active'));
+            document.getElementById('lang-' + lang).classList.add('active');
+            document.querySelector('.lang-btn[onclick="setLang(\'' + lang + '\')"]').classList.add('active');
+            document.documentElement.lang = lang;
+        }
+
+        const today = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+        const todayTR = new Date().toLocaleDateString('tr-TR', { year: 'numeric', month: 'long', day: 'numeric' });
+        document.getElementById('date-en').textContent = today;
+        document.getElementById('date-tr').textContent = todayTR;
+    </script>
+</body>
+
+</html>
