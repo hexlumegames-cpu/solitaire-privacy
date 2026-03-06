@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Privacy Policy – Solitaire Classic Zen Master</title>
+    <title>Privacy Policy – Solitaire: Classic Card Game</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Exo+2:wght@300;400;600;700&display=swap');
 
@@ -34,7 +34,6 @@
             min-height: 100vh;
         }
 
-        /* Subtle grid background */
         body::before {
             content: '';
             position: fixed;
@@ -241,7 +240,6 @@
             color: var(--accent);
         }
 
-        /* Language sections */
         .lang-section {
             display: none;
         }
@@ -270,7 +268,7 @@
                 <div class="doc-type">Legal Document</div>
                 <h1>Privacy Policy</h1>
                 <div class="meta">
-                    Solitaire Classic – Zen Master &nbsp;|&nbsp;
+                    Solitaire: Classic Card Game &nbsp;|&nbsp;
                     Developed by <span>Hexlume Games</span><br>
                     Package: <span>com.hexlumegames.solitaire</span><br>
                     Last Updated: <span id="date-en"></span>
@@ -279,7 +277,7 @@
 
             <div class="highlight-box">
                 <p>This Privacy Policy explains how Hexlume Games ("we", "us", or "our") collects, uses, and protects
-                    information when you use our application <strong>Solitaire Classic – Zen Master</strong>. By using
+                    information when you use our application <strong>Solitaire: Classic Card Game</strong>. By using
                     the app, you agree to the terms of this policy.</p>
             </div>
 
@@ -290,12 +288,26 @@
                 <ul>
                     <li><strong>Google AdMob:</strong> To serve advertisements, AdMob may collect device identifiers
                         (Advertising ID), IP address, device model, OS version, and general location. On Android 13+,
-                        this requires your permission via the ad personalization dialog.</li>
+                        this requires your permission via the ad personalization consent dialog (User Messaging
+                        Platform / UMP).</li>
                     <li><strong>Google Play Services:</strong> May collect diagnostic and usage data in accordance with
                         Google's own Privacy Policy.</li>
                 </ul>
-                <p>All gameplay data (scores, move history, game state) is stored <strong>locally on your device
-                        only</strong> via localStorage / IndexedDB and is never transmitted to our servers.</p>
+                <p>All gameplay data is stored <strong>locally on your device only</strong> via the browser's
+                    localStorage API (key: <code>zen_solitaire_save</code>) and is never transmitted to our servers.
+                    The locally stored data includes:</p>
+                <ul>
+                    <li>Game state (card positions, stock, waste, and foundation piles)</li>
+                    <li>Draw mode preference (Draw 1 or Draw 3)</li>
+                    <li>Move history (used for the Undo feature)</li>
+                    <li>Free undo usage count and Unlimited Undo unlock status for the current session</li>
+                    <li>Score, move count, and elapsed time</li>
+                </ul>
+                <p>We also read your device's language setting (<code>navigator.language</code>) solely to display the
+                    app in your preferred language (English or Turkish). This is processed locally and is never shared
+                    or stored externally.</p>
+                <p>This app is designed for Android devices only. We do not request Apple's App Tracking Transparency
+                    (ATT) authorization, as iOS is not a supported platform.</p>
             </section>
 
             <section>
@@ -308,7 +320,7 @@
             </section>
 
             <section>
-                <h2>3. Advertising & Ad Personalization</h2>
+                <h2>3. Advertising &amp; Ad Personalization</h2>
                 <p>Our app uses Google AdMob to display banner, interstitial, and rewarded video advertisements. AdMob
                     may use your Advertising ID to show personalized ads based on your interests.</p>
                 <p>You can opt out of personalized advertising at any time:</p>
@@ -317,8 +329,16 @@
                         Ads Personalization</li>
                     <li>Visit: <a href="https://adssettings.google.com" target="_blank">adssettings.google.com</a></li>
                 </ul>
-                <p>Rewarded ads are only shown when you explicitly tap the "Auto-Finish" button and confirm the ad
-                    request. You are never forced to watch an advertisement.</p>
+                <p>Rewarded ads are only shown when you explicitly request the <strong>Unlimited Undo</strong> feature
+                    (after your 3 free Undo moves are used) and confirm the ad request via a dialog. The Auto-Finish
+                    feature does not require watching an advertisement. You are never forced to watch an
+                    advertisement.</p>
+                <p><strong>European Economic Area (EEA) and UK Users:</strong> In compliance with applicable data
+                    protection laws (GDPR), users in these regions will be presented with a consent dialog (Google User
+                    Messaging Platform – UMP) upon their first use of the app. The consent form is displayed only when
+                    required based on your region and consent status. This dialog allows you to manage your preferences
+                    regarding personalized advertising and the use of tracking technologies by AdMob and its
+                    partners.</p>
             </section>
 
             <section>
@@ -326,14 +346,17 @@
                 <p>Our app is intended for a general audience and is not directed at children under the age of 13. We do
                     not knowingly collect personal information from children under 13. If you believe a child has
                     provided personal information, please contact us immediately so we can delete it.</p>
-                <p>AdMob is configured to comply with COPPA and the Children's Online Privacy Protection Act where
-                    applicable.</p>
+                <p>Our AdMob integration does not use child-directed treatment tags
+                    (<code>tagForChildDirectedTreatment</code>). If you believe this app is being used by a child under
+                    13, please contact us so we can take appropriate action.</p>
             </section>
 
             <section>
-                <h2>5. Data Retention & Deletion</h2>
-                <p>Local game data (progress, settings, scores) is stored on your device and can be deleted at any time
-                    by uninstalling the app or clearing app data via your device settings.</p>
+                <h2>5. Data Retention &amp; Deletion</h2>
+                <p>Local game data (progress, settings, scores, move history) is stored on your device and can be
+                    deleted at any time by uninstalling the app or clearing app data via your device settings. You can
+                    also reset your game data at any time using the in-app "New Game" option, which clears the saved
+                    state.</p>
                 <p>Ad-related data collected by Google AdMob is governed by Google's data retention policy. Please refer
                     to <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a> for
                     details.</p>
@@ -402,7 +425,7 @@
                 <div class="doc-type">Yasal Belge</div>
                 <h1>Gizlilik Politikası</h1>
                 <div class="meta">
-                    Solitaire Classic – Zen Master &nbsp;|&nbsp;
+                    Solitaire: Classic Card Game &nbsp;|&nbsp;
                     Geliştirici: <span>Hexlume Games</span><br>
                     Paket: <span>com.hexlumegames.solitaire</span><br>
                     Son Güncelleme: <span id="date-tr"></span>
@@ -410,8 +433,8 @@
             </div>
 
             <div class="highlight-box">
-                <p>Bu Gizlilik Politikası, Hexlume Games ("biz", "bizim") olarak <strong>Solitaire Classic – Zen
-                        Master</strong> uygulamasını kullandığınızda nasıl bilgi topladığımızı, kullandığımızı ve
+                <p>Bu Gizlilik Politikası, Hexlume Games ("biz", "bizim") olarak <strong>Solitaire: Classic Card
+                        Game</strong> uygulamasını kullandığınızda nasıl bilgi topladığımızı, kullandığımızı ve
                     koruduğumuzu açıklar. Uygulamayı kullanarak bu politikanın koşullarını kabul etmiş olursunuz.</p>
             </div>
 
@@ -422,12 +445,26 @@
                 <ul>
                     <li><strong>Google AdMob:</strong> Reklam gösterimi için AdMob; Reklam Kimliği (Advertising ID), IP
                         adresi, cihaz modeli, işletim sistemi sürümü ve genel konum bilgisi toplayabilir. Android 13 ve
-                        üzerinde bu, reklam kişiselleştirme iletişim kutusu aracılığıyla izninizi gerektirir.</li>
+                        üzerinde bu, reklam kişiselleştirme onay iletişim kutusu (Kullanıcı Mesajlaşma Platformu /
+                        UMP) aracılığıyla izninizi gerektirir.</li>
                     <li><strong>Google Play Hizmetleri:</strong> Google'ın kendi Gizlilik Politikası çerçevesinde
                         tanılama ve kullanım verileri toplayabilir.</li>
                 </ul>
-                <p>Tüm oyun verileri (skorlar, hamle geçmişi, oyun durumu) <strong>yalnızca cihazınızda</strong>
-                    localStorage / IndexedDB aracılığıyla depolanır ve sunucularımıza iletilmez.</p>
+                <p>Tüm oyun verileri <strong>yalnızca cihazınızda</strong> tarayıcının localStorage API'si
+                    (anahtar: <code>zen_solitaire_save</code>) aracılığıyla depolanır ve sunucularımıza iletilmez.
+                    Yerel olarak saklanan veriler şunları içerir:</p>
+                <ul>
+                    <li>Oyun durumu (kart konumları, deste, atık ve temel yığınları)</li>
+                    <li>Çekiş modu tercihi (Draw 1 veya Draw 3)</li>
+                    <li>Hamle geçmişi (Geri Al özelliği için kullanılır)</li>
+                    <li>Ücretsiz Geri Al kullanım sayısı ve mevcut oturum için Sınırsız Geri Al kilit açma durumu</li>
+                    <li>Skor, hamle sayısı ve geçen süre</li>
+                </ul>
+                <p>Uygulamayı tercih ettiğiniz dilde (Türkçe veya İngilizce) göstermek amacıyla cihazınızın dil
+                    ayarını (<code>navigator.language</code>) okuyoruz. Bu işlem yalnızca cihazınızda gerçekleşir;
+                    veri paylaşılmaz veya harici olarak depolanmaz.</p>
+                <p>Bu uygulama yalnızca Android cihazlar için tasarlanmıştır. iOS desteklenen bir platform olmadığından
+                    Apple'ın Uygulama İzleme Şeffaflığı (ATT) yetkilendirmesi talep edilmemektedir.</p>
             </section>
 
             <section>
@@ -451,21 +488,33 @@
                     <li>Ziyaret edin: <a href="https://adssettings.google.com"
                             target="_blank">adssettings.google.com</a></li>
                 </ul>
-                <p>Ödüllü reklamlar yalnızca "Otomatik Tamamla" düğmesine açıkça dokunduğunuzda ve reklam isteğini
-                    onayladığınızda gösterilir. Hiçbir zaman reklam izlemeye zorlanmazsınız.</p>
+                <p>Ödüllü reklamlar yalnızca <strong>Sınırsız Geri Al</strong> özelliğini talep ettiğinizde (3 ücretsiz
+                    Geri Al hakkınız tükendikten sonra) ve reklam isteğini bir iletişim kutusu aracılığıyla
+                    onayladığınızda gösterilir. Otomatik Tamamlama özelliği reklam izlemeyi gerektirmez. Hiçbir zaman
+                    reklam izlemeye zorlanmazsınız.</p>
+                <p><strong>Avrupa Ekonomik Alanı (AEA) ve Birleşik Krallık Kullanıcıları:</strong> Geçerli veri koruma
+                    yasalarına (GDPR) uygun olarak, bu bölgelerdeki kullanıcılara uygulamayı ilk kullanımlarında bir
+                    onay iletişim kutusu (Google Kullanıcı Mesajlaşma Platformu – UMP) sunulacaktır. Onay formu yalnızca
+                    bölgenize ve onay durumunuza göre gerekli olduğunda görüntülenir. Bu ekran, kişiselleştirilmiş
+                    reklamlar ile AdMob ve iş ortaklarının izleme teknolojilerini kullanımına ilişkin tercihlerinizi
+                    yönetmenize olanak tanır.</p>
             </section>
 
             <section>
                 <h2>4. Çocukların Gizliliği (COPPA)</h2>
                 <p>Uygulamamız genel bir kitleye yöneliktir ve 13 yaşın altındaki çocuklara yönelik değildir. 13 yaşın
-                    altındaki çocuklardan bilerek kişisel bilgi toplamıyoruz. Bir çocuğun kişisel bilgi verdiğini
-                    düşünüyorsanız, hemen bizimle iletişime geçin; söz konusu bilgileri sileceğiz.</p>
+                    altındaki çocuklardan bilerek kişisel bilgi toplamıyoruz.</p>
+                <p>AdMob entegrasyonumuzda çocuklara yönelik işaretleme (<code>tagForChildDirectedTreatment</code>)
+                    etiketleri kullanılmamaktadır. Uygulamanın 13 yaşın altında bir çocuk tarafından kullanıldığını
+                    düşünüyorsanız, gerekli önlemleri almak için lütfen bizimle iletişime geçin.</p>
             </section>
 
             <section>
                 <h2>5. Veri Saklama ve Silme</h2>
-                <p>Yerel oyun verileri (ilerleme, ayarlar, skorlar) cihazınızda saklanır; uygulamayı kaldırarak veya
-                    cihaz ayarlarınızdan uygulama verilerini temizleyerek istediğiniz zaman silebilirsiniz.</p>
+                <p>Yerel oyun verileri (ilerleme, ayarlar, skorlar, hamle geçmişi) cihazınızda saklanır; uygulamayı
+                    kaldırarak veya cihaz ayarlarınızdan uygulama verilerini temizleyerek istediğiniz zaman
+                    silebilirsiniz. Ayrıca uygulama içindeki "Yeni Oyun" seçeneğini kullanarak kaydedilmiş oyun
+                    durumunu istediğiniz zaman sıfırlayabilirsiniz.</p>
                 <p>Google AdMob tarafından toplanan reklam verilerine ilişkin Google'ın veri saklama politikası
                     geçerlidir. Ayrıntılar için <a href="https://policies.google.com/privacy" target="_blank">Google'ın
                         Gizlilik Politikası</a>'na başvurun.</p>
@@ -540,7 +589,6 @@
             document.documentElement.lang = lang;
         }
 
-        // Set today's date
         const today = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
         const todayTR = new Date().toLocaleDateString('tr-TR', { year: 'numeric', month: 'long', day: 'numeric' });
         document.getElementById('date-en').textContent = today;
